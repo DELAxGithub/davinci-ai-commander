@@ -163,7 +163,23 @@ class DaVinciAgentApp(ctk.CTk):
             full_prompt = f"{system_instruction}\n\nUser Request: {user_input}\nCode:"
             
             response = model.generate_content(full_prompt)
-            generated_code = response.text.strip().replace("```python", "").replace("```", "")
+            raw_text = response.text
+            
+            # Robust extraction of code block
+            import re
+            code_match = re.search(r"```python(.*?)```", raw_text, re.DOTALL)
+            if code_match:
+                generated_code = code_match.group(1).strip()
+            else:
+                 # Fallback: try generic code block or just use the text
+                code_match_generic = re.search(r"```(.*?)```", raw_text, re.DOTALL)
+                if code_match_generic:
+                    generated_code = code_match_generic.group(1).strip()
+                else:
+                    generated_code = raw_text.strip()
+            
+            # Remove any potential trailing non-code garbage if no markdown found (simple heuristics)
+            # But the regex above handles the markdown case well.
             
             self.log(f"Generated Code:\n{textwrap.indent(generated_code, '  ')}")
             
