@@ -145,11 +145,15 @@ class DaVinciAgentApp(ctk.CTk):
             3. Use simple, direct API calls.
             4. If creating bins, use media_pool.AddSubFolder(root_folder, "name").
             
+            5. If deleting bins, iterate through `root_folder.GetSubFolderList()`. Do NOT use `FindSubFolder()`.
+            6. If the user specifies a range (e.g., "case31-45"), parse the numbers and iterate.
+
             NEGATIVE CONSTRAINTS (YOU CANNOT DO THESE):
             - You CANNOT edit video content (pixels), apply effects, or color grade clips directly.
             - You CANNOT "watch" or "analyze" the video content.
             - You CANNOT know if a video is "funny" or "good".
-            - You CANNOT interact with OS UI elements (mouse clicks, key presses via pyautogui etc).
+            - You CANNOT interact with OS UI elements (mouse clicks, key presses).
+            - You CANNOT use `FindSubFolder()` (it does not exist). Use `GetSubFolderList()`.
             
             IF THE REQUEST VIOLATES CONSTRAINTS OR IS IMPOSSIBLE:
             Return exactly and ONLY this line of code:
