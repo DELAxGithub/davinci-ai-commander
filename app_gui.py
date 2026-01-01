@@ -140,7 +140,7 @@ class DaVinciAgentApp(ctk.CTk):
             - root_folder (The generic root folder object)
             
             RULES:
-            1. Return ONLY the python code. No markdown formatting, no backticks.
+            1. You MUST wrap the code in ```python ... ``` markdown block.
             2. Do NOT import DaVinciResolveScript. Assume objects provided.
             3. Use simple, direct API calls.
             4. If creating bins, use media_pool.AddSubFolder(root_folder, "name").
