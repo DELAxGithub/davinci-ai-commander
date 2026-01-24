@@ -9,3 +9,7 @@ dist/
 build/
 *.spec
 .env
+*.pkg
+*.jpg
+*.png
+*.icns
