@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaVinci AI Commander — Control DaVinci Resolve with Natural Language</title>
+    <meta name="description" content="Automate DaVinci Resolve with plain English commands. AI-powered bin management, batch rendering, marker creation, and more.">
+    <meta property="og:title" content="DaVinci AI Commander">
+    <meta property="og:description" content="Control DaVinci Resolve with natural language. AI writes the code, you stay creative.">
+    <meta property="og:type" content="website">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --border: #222;
+            --text: #e5e5e5;
+            --muted: #888;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover { background: var(--accent-hover); }
+
+        .price {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* Demo */
+        .demo {
+            margin: 60px 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .demo-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .demo-line {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-family: 'Menlo', 'SF Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .demo-line .prompt { color: var(--accent); }
+        .demo-line .result { color: #22c55e; }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 48px 0;
+        }
+
+        .feature {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .feature h3 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .feature p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* Requirements */
+        .requirements {
+            margin: 48px 0;
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .requirements h2 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements li {
+            font-size: 0.9rem;
+            color: var(--muted);
+            padding: 4px 0;
+        }
+
+        .requirements li::before {
+            content: "- ";
+        }
+
+        /* FAQ */
+        .faq {
+            margin: 48px 0;
+        }
+
+        .faq h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+
+        .faq-item h3 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a { color: var(--muted); }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .features { grid-template-columns: 1fr; }
+            h1 { font-size: 1.7rem; }
+            header { padding: 48px 0 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="icon.png" alt="DaVinci AI Commander" class="icon">
+            <h1>DaVinci AI Commander</h1>
+            <p class="tagline">Control DaVinci Resolve with natural language. Type what you want, AI writes the code.</p>
+            <a href="#" class="cta-button" id="buy-link">Download for macOS</a>
+            <span class="price">$19 — One-time purchase. No subscription.</span>
+        </header>
+
+        <div class="demo">
+            <div class="demo-title">How it works</div>
+            <div class="demo-line">
+                <span class="prompt">&gt;</span>
+                <span>Create bins case01 to case30</span>
+            </div>
+            <div class="demo-line">
+                <span class="result">Done. Created 30 bins.</span>
+            </div>
+            <div class="demo-line" style="margin-top: 16px;">
+                <span class="prompt">&gt;</span>
+                <span>Set all clip colors to blue in the timeline</span>
+            </div>
+            <div class="demo-line">
+                <span class="result">Done. 47 clips updated.</span>
+            </div>
+            <div class="demo-line" style="margin-top: 16px;">
+                <span class="prompt">&gt;</span>
+                <span>Render all timelines with YouTube preset</span>
+            </div>
+            <div class="demo-line">
+                <span class="result">Queued 5 render jobs.</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Bin Management</h3>
+                <p>Create, rename, and organize bins in bulk. No more clicking through menus.</p>
+            </div>
+            <div class="feature">
+                <h3>Batch Rendering</h3>
+                <p>Queue renders across multiple timelines with a single command.</p>
+            </div>
+            <div class="feature">
+                <h3>Markers &amp; Metadata</h3>
+                <p>Add markers with notes, read and write clip metadata instantly.</p>
+            </div>
+            <div class="feature">
+                <h3>Safe by Design</h3>
+                <p>Only structural operations. Cannot modify your video content, effects, or color.</p>
+            </div>
+        </div>
+
+        <div class="requirements">
+            <h2>Requirements</h2>
+            <ul>
+                <li>macOS 11 (Big Sur) or later</li>
+                <li>DaVinci Resolve 19+ (Free or Studio)</li>
+                <li>Google Gemini API key (free tier available)</li>
+            </ul>
+        </div>
+
+        <div class="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3>Does it work with the free version of DaVinci Resolve?</h3>
+                <p>Yes. Both Free and Studio editions are supported.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need a Gemini API key?</h3>
+                <p>Yes. You can get one for free at Google AI Studio. The free tier is generous enough for typical use.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can it edit my video?</h3>
+                <p>No. It automates structural tasks (bins, timelines, markers, rendering) via the Resolve Scripting API. It cannot cut, trim, apply effects, or color grade.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is my data sent to the cloud?</h3>
+                <p>Your commands are sent to Google Gemini to generate code. No video data or project files are uploaded.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 DELAX Studio. Not affiliated with Blackmagic Design.</p>
+            <p><a href="mailto:notheshow@mac.com">Contact</a></p>
+        </footer>
+    </div>
+</body>
+</html>

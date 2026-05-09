@@ -1,62 +1,94 @@
 # DaVinci AI Commander
 
-**自然言語でDaVinci Resolveを操作する、プロフェッショナル向け自動化ツール**
+**Control DaVinci Resolve with natural language. Type what you want, and AI writes the code.**
 
-<img src="https://img.shields.io/badge/DaVinci_Resolve-19+-blue.svg" alt="DaVinci Resolve 19+"> <img src="https://img.shields.io/badge/Platform-macOS-lightgrey.svg" alt="macOS">
+<img src="https://img.shields.io/badge/DaVinci_Resolve-19+-blue.svg" alt="DaVinci Resolve 19+"> <img src="https://img.shields.io/badge/Platform-macOS_11+-lightgrey.svg" alt="macOS 11+"> <img src="https://img.shields.io/badge/AI-Gemini_2.5_Flash-orange.svg" alt="Gemini 2.5 Flash">
 
-DaVinci AI Commanderは、DaVinci Resolve Scripting APIの力を最大限に引き出し、面倒な「仕込み」「整理」「書き出し」作業をチャット感覚で自動化するMacアプリケーションです。
+DaVinci AI Commander automates the tedious parts of post-production — bin organization, batch rendering, marker management, metadata editing — through plain English (or Japanese) commands.
 
-「ビンを日付ごとに整理して」「すべてのタイムラインをYouTube用プリセットで書き出して」――そんな指示をタイプするだけで、AIがPythonスクリプトを生成し、即座に実行します。
+> "Create bins case01 to case30" → Done in 2 seconds.  
+> "Set all clip colors to blue in the timeline" → Done.  
+> "Render all timelines with the YouTube preset" → Queued.
 
-## 主な機能
+## Features
 
-- **自然言語コントロール**: Google Gemini 1.5 Flash を搭載し、曖昧な指示も正確なAPIコードに変換。
-- **安全設計**: 映像の中身やピクセルデータには干渉しない「安全な操作（整理・管理）」に特化。
-- **スタンドアロン動作**: 複雑なPython環境構築は不要。配布された `.app` を起動するだけでAPIに接続します。
+- **Natural Language Control** — Powered by Google Gemini 2.5 Flash. Translates your intent into DaVinci Resolve Scripting API calls.
+- **Safe by Design** — Only touches structural operations (bins, timelines, markers, metadata). Cannot modify video content, apply effects, or color grade.
+- **Code Validation** — AI-generated code is checked for dangerous patterns before execution.
+- **Secure API Key Storage** — Your Gemini API key is stored in macOS Keychain, not in plain text.
+- **Command History** — Navigate past commands with ↑↓ arrow keys.
+- **Standalone .app** — No Python setup required for end users. Just download, launch, and connect.
 
-## ドキュメント
+## Requirements
 
-プロの現場で役立つ具体的なユースケースや活用ガイドを用意しました。
+- macOS 11 (Big Sur) or later
+- DaVinci Resolve 19+ (Free or Studio)
+- Google Gemini API key ([get one here](https://aistudio.google.com/apikey))
 
-- **[プロフェッショナル・オートメーション・ガイド (pro_reference.md)](pro_reference.md)**  
-  アシスタントエディター業務を自動化するための運用ガイド。
-- **[ユースケース一覧 (use_cases.md)](use_cases.md)**  
-  DaVinci Resolve APIで「できること・できないこと」の詳細リスト。
+## Getting Started
 
-## インストールと起動
+1. **Open DaVinci Resolve** with a project loaded.
+2. **Enable scripting**: Resolve → Preferences → System → General → "External scripting using" → **Local**.
+3. **Launch DaVinci AI Commander**.
+4. **Set your API key** (first launch only — click "Set API Key" button).
+5. **Type a command** and press Enter.
 
-1. **DaVinci Resolve を起動する**
-   プロジェクトを開いた状態にしてください。
+## What It Can Do
 
-2. **アプリを配置する**
-   `dist/DaVinci AI Commander.app` をアプリケーションフォルダなどに移動します。
+| Category | Examples |
+|----------|---------|
+| **Bin Management** | Create, delete, rename bins in bulk |
+| **Timeline** | Create timelines, append clips, read timeline info |
+| **Markers** | Add, list, remove markers with notes |
+| **Metadata** | Read/write clip metadata, project settings |
+| **Rendering** | Queue renders, apply presets, batch export |
+| **Clip Properties** | Change clip colors, flags |
 
-3. **起動する**
-   ダブルクリックして起動します。
-   *初回起動時のみ、Google Gemini APIキーの設定が必要です（右下の "Set API Key" ボタン）。*
+## What It Cannot Do
 
-## 開発者向け情報
+- Edit video content (cut, trim, split)
+- Apply effects or color grading
+- Analyze video/audio content
+- Interact with the Resolve UI directly
 
-### セットアップ
+See [use_cases.md](use_cases.md) for the full list, and [pro_reference.md](pro_reference.md) for professional automation workflows.
 
-Python 3.10+ 環境が必要です。
+## Development
+
+### Setup
 
 ```bash
-# 依存ライブラリのインストール
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-
-# アプリの起動（開発モード）
 ./launch_app.sh
 ```
 
-### ビルド（パッケージング）
-
-PyInstallerを使用して `.app` を生成します。
+### Build
 
 ```bash
 ./build_app.sh
 ```
 
-## ライセンス
+For signed distribution:
 
-[MIT License](LICENSE)
+```bash
+CODESIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)" ./build_app.sh
+```
+
+For signed + notarized:
+
+```bash
+CODESIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)" \
+APPLE_ID="your@email.com" \
+APPLE_TEAM_ID="YOURTEAMID" \
+APP_PASSWORD="xxxx-xxxx-xxxx-xxxx" \
+./build_app.sh
+```
+
+## License
+
+[MIT License](LICENSE) — © 2026 DELAX Studio
+
+---
+
+*DaVinci AI Commander is not affiliated with or endorsed by Blackmagic Design.*

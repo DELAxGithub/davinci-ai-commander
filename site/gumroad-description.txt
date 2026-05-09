@@ -1,0 +1,36 @@
+DaVinci AI Commander
+
+Type what you want in plain English. AI generates the code. DaVinci Resolve executes it.
+
+Stop clicking through menus for repetitive tasks.
+
+  "Create bins case01 to case30" → Done in 2 seconds
+  "Set all clip colors to blue" → 47 clips updated
+  "Render all timelines with YouTube preset" → 5 jobs queued
+
+
+WHAT IT AUTOMATES
+
+  Bin management — Create, rename, organize bins in bulk
+  Batch rendering — Queue renders across multiple timelines
+  Markers — Add, list, remove markers with notes
+  Metadata — Read and write clip metadata
+  Clip properties — Change colors, flags
+
+
+WHAT IT DOES NOT DO
+
+This tool handles structural operations only. It cannot cut, trim, apply effects, color grade, or modify your video content in any way. Your creative work stays untouched.
+
+
+REQUIREMENTS
+
+  macOS 11 (Big Sur) or later
+  DaVinci Resolve 19+ (Free or Studio)
+  Google Gemini API key (free tier available at aistudio.google.com)
+
+
+WHAT'S INCLUDED
+
+  DaVinci AI Commander.app (signed & notarized by Apple)
+  Setup guide with screenshots
