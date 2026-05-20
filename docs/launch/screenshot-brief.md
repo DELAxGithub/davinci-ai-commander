@@ -6,7 +6,7 @@
 
 ## 共通デザインシステム（仮定）
 * **アスペクト比**: 16:9 (横長)
-* **背景**: 視認性の高いダークモード。背後に DaVinci Resolve の編集画面を少しぼかして配置し、手前に『[要確定: アプリ名]』のアプリ画面をシャドウ付きでフローティング配置（グラスモーフィズム風）。
+* **背景**: 視認性の高いダークモード。背後に DaVinci Resolve の編集画面を少しぼかして配置し、手前に『DaVinci AI Commander』のアプリ画面をシャドウ付きでフローティング配置（グラスモーフィズム風）。
 * **フォント**: Outfit または Inter (英語) / Noto Sans JP (日本語)。
 * **配色**: Blackmagic Designのブランドカラーである深みのあるブルー/パープルに、GeminiのAI感を表すシアン/マゼンタのグラデーション光彩をアクセントに加える。
 
@@ -72,11 +72,11 @@
 ## 5枚目：買い切りの明示と安全設計（Buy Once & Secure）
 
 * **キャッチコピー（大）**:
-  「月額サブスクなし。[要確定: 価格] 買い切りライセンス」
-  `[ENG] [要確定: 価格] One-Time Purchase. No Monthly Subscriptions.`
+  「月額サブスクなし。$19 買い切りライセンス」
+  `[ENG] $19 One-Time Purchase. No Monthly Subscriptions.`
 * **サブコピー（小）**:
   APIキーはmacOS Keychainで安全に保護。危険なAIコードを弾くバリデーション機能を備えたセーフティ設計。
   `[ENG] Pure indie product. API key secured via Apple Keychain with built-in code validation safeguards.`
 * **画面レイアウト構成**:
   * アプリの「APIキー設定画面」と、macOS Keychainの安全な盾のアイコンを融合した3Dグラフィック。
-  * 「[要確定: 価格] 買い切り（Lifetime Access）」と大きく目立つバッジを中央右に配置し、Gumroadでの決済手段（クレジットカード、PayPal、Apple Pay対応ロゴ）を美しく並べる。
+  * 「$19 買い切り（Lifetime Access）」と大きく目立つバッジを中央右に配置し、Gumroadでの決済手段（クレジットカード、PayPal、Apple Pay対応ロゴ）を美しく並べる。

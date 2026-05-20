@@ -8,7 +8,7 @@ This document contains the product page description in both Japanese and English
 # JAPANESE VERSION (日本語版)
 
 ## Title (タイトル)
-[要確定: アプリ名] — AI自動操縦でポストプロダクションを高速化する macOS アプリ
+DaVinci AI Commander — AI自動操縦でポストプロダクションを高速化する macOS アプリ
 
 ## Subtitle (サブタイトル)
 「A-RollとAudioのBinを作って」「ProResでレンダーキューに登録して」— DaVinci Resolve の面倒なルーティン作業を、自然な日本語だけでAI自動化。
@@ -18,7 +18,7 @@ This document contains the product page description in both Japanese and English
 ### あなたの編集時間を「創造的な作業」に取り戻す
 動画編集において、Bin（フォルダー）の作成、タイムラインへの素材配置、指示マーカーの配置、レンダープリセットの適用といった「機械的な繰り返し作業」に毎日何分、何時間を費やしていますか？
 
-『[要確定: アプリ名]』は、プログラミングや複雑なスクリプトの知識を必要とせず、まるで専属のアシスタントエディターに指示を出すように、自然な言葉で DaVinci Resolve を自動操縦できる macOS 専用アプリです。
+『DaVinci AI Commander』は、プログラミングや複雑なスクリプトの知識を必要とせず、まるで専属のアシスタントエディターに指示を出すように、自然な言葉で DaVinci Resolve を自動操縦できる macOS 専用アプリです。
 
 AI（Google Gemini 2.5 Flash）があなたの指示を解釈し、背後で DaVinci Resolve API を叩く Python コードを瞬時に生成・実行します。
 
@@ -32,10 +32,9 @@ AI（Google Gemini 2.5 Flash）があなたの指示を解釈し、背後で DaV
 * **Keychain による保護**: 大切な Gemini API キーは macOS 標準の暗号化領域（Keychain）に安全に保管されます。
 
 ### なぜ無料ではなく「買い切り有料」なのか？
-[要確定: なぜ無料じゃないかの理由（Dela の事情）]
+本アプリはお客様ご自身の Google Gemini API キーを使用する設計のため、開発者側にサーバー維持コストは発生していません（その分、動作も非常に高速で、データが開発者サーバーを経由しないためプライバシーも完全に守られます）。
 
-本アプリは、お客様ご自身の Google Gemini API キーを使用する設計です（開発者側のサーバーを経由しないため、動作が非常に高速かつプライバシーも完全に守られます）。
-月額サブスクリプションではなく、一度の購入で永続的にアップデートを受け取れる「買い切りモデル」として提供することで、長くあなたの編集の相棒として役立てていただけるようにしています。
+それでも有料（**$19 買い切り**）にしているのは、(1) Resolve / macOS のアップデートに追従する継続的な保守、(2) AI 生成コードのバリデーションや署名・公証など安全設計の維持コスト、(3) 広告もデータ販売もサブスクもしないインディー開発者としての姿勢の表明、のためです。一度のお支払いで、長くあなたの編集の相棒として役立つツールでありたい、という意思を価格に込めています。
 
 ### システム要件
 * **OS**: macOS 11 (Big Sur) 以降
@@ -48,7 +47,7 @@ AI（Google Gemini 2.5 Flash）があなたの指示を解釈し、背後で DaV
 # ENGLISH VERSION (英語版)
 
 ## Title
-[要確定: アプリ名] — AI-Powered Copilot to Automate DaVinci Resolve on macOS
+DaVinci AI Commander — AI-Powered Copilot to Automate DaVinci Resolve on macOS
 
 ## Subtitle
 "Create bins for A-Roll and Audio," "Add to render queue as ProRes" — Automate tedious DaVinci Resolve workflows with natural language. No coding required.
@@ -58,7 +57,7 @@ AI（Google Gemini 2.5 Flash）があなたの指示を解釈し、背後で DaV
 ### Reclaim Your Editing Time for Truly Creative Work
 How many minutes or hours do you spend every day on repetitive, mechanical tasks in DaVinci Resolve? Creating bin structures, organizing raw footage, appending clips to timelines, placing markers, and setting up rendering profiles...
 
-『[要確定: アプリ名]』 is a macOS desktop application that acts as your personal assistant editor. By simply typing natural language commands, you can automate complex DaVinci Resolve workflows in seconds. 
+『DaVinci AI Commander』 is a macOS desktop application that acts as your personal assistant editor. By simply typing natural language commands, you can automate complex DaVinci Resolve workflows in seconds. 
 
 Powered by Google Gemini 2.5 Flash, the app translates your text instructions into secure Python scripts and executes them immediately inside Resolve via its native API.
 
@@ -71,10 +70,10 @@ Powered by Google Gemini 2.5 Flash, the app translates your text instructions in
 * **Security & Safeguards**: Scans and validates AI-generated code before execution to block any unsafe operations.
 * **macOS Keychain Integration**: Safely stores your Gemini API key inside Apple's encrypted OS keychain.
 
-### Transparent Pricing: Buy Once, Keep Forever
-[要確定: なぜ無料じゃないかの理由（Dela の事情 - 英語）]
+### Transparent Pricing: Buy Once, Keep Forever ($19)
+This app is designed to run directly on your Mac using your own Google Gemini API key. There are no developer server middle-men, making execution blazingly fast and 100% private. So why charge at all?
 
-This app is designed to run directly on your Mac using your own Google Gemini API key. There are no developer server middle-men, making execution blazingly fast and 100% private. We charge a one-time purchase fee to fund continuous development for macOS and DaVinci Resolve API updates without resorting to annoying monthly subscription fees.
+The **$19 one-time fee** funds (1) continuous compatibility maintenance for DaVinci Resolve and macOS updates, (2) ongoing investment in safety design — AI code validation, Keychain integration, code signing & notarization, and (3) a no-ads, no-data-sale, no-subscription commitment from an independent developer. Buy once, use it for as long as the tool helps your editing workflow.
 
 ### System Requirements
 * **OS**: macOS 11 (Big Sur) or later
