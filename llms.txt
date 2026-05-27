@@ -1,0 +1,46 @@
+# DaVinci AI Commander
+
+> Control DaVinci Resolve with natural language. Type what you want in English or Japanese, and Gemini-powered AI translates intent into Resolve Scripting API calls — bin management, batch rendering, markers, metadata — without writing Python.
+
+## What this is
+
+DaVinci AI Commander is a macOS desktop app that automates the tedious structural parts of DaVinci Resolve post-production. It's safe-by-design: only touches bins, timelines, markers, metadata, and render queues — it cannot modify video content, apply effects, or color grade.
+
+- Platform: macOS 11+ (Big Sur or later)
+- Target: DaVinci Resolve 19+ (Free or Studio)
+- AI: Google Gemini 2.5 Flash
+- Distribution: standalone .app (no Python setup for end users)
+- License: see LICENSE in repo
+
+API key storage: macOS Keychain (never plaintext). AI-generated code is validated for dangerous patterns before execution.
+
+## Where to start
+
+- [README](https://github.com/DELAxGithub/davinci-ai-commander/blob/main/README.md) — install, requirements, what it can/cannot do
+- [SCRIPTS_INSTALL](https://github.com/DELAxGithub/davinci-ai-commander/blob/main/SCRIPTS_INSTALL.md) — installation walkthrough
+- [pro_reference.md](https://github.com/DELAxGithub/davinci-ai-commander/blob/main/pro_reference.md) — professional automation workflows
+- [docs/](https://github.com/DELAxGithub/davinci-ai-commander/tree/main/docs) — additional docs and use cases
+- Standalone download: `DaVinci-AI-Commander-1.0.0.dmg` in repo releases / root
+
+## What it can do
+
+| Category | Examples |
+|---|---|
+| Bin management | Create, delete, rename bins in bulk |
+| Timeline | Create timelines, append clips, read timeline info |
+| Markers | Add, list, remove markers with notes |
+| Metadata | Read/write clip metadata, project settings |
+| Rendering | Queue renders, apply presets, batch export |
+| Clip properties | Change clip colors, flags |
+
+## What this is NOT
+
+- Not a video editor — cannot cut, trim, split, or join clips
+- Not a color grading tool — cannot apply LUTs, nodes, or grades
+- Not a VFX or compositing tool — no effect application
+- Not a media analyzer — cannot inspect video/audio content semantically
+- Not a Resolve UI macro recorder — operates via the Scripting API, not UI automation
+
+## Requirements
+
+- macOS 11+ • DaVinci Resolve 19+ • Resolve preference "External scripting using" set to **Local** • Google Gemini API key
